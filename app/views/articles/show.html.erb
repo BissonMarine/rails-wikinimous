@@ -1,0 +1,11 @@
+<h2>Wikinimous</h2>
+
+<ol>
+    <li>
+      <%= @article.title %> - <%= @article.content %>
+    </li>
+</ol>
+
+<%= link_to "Edit article", edit_article_path(@article) %>
+
+<%= link_to "Return to all articles", articles_path %>

@@ -1,0 +1,13 @@
+<div class="d-flex bg-info border border-secondary container m-3 p-3">
+<h2 class="text-white">Wikinimous</h2>
+<i class="fa-solid fa-pen-nib mb-4 text-white font-size-20 text-align-right"><%= link_to "New", new_article_path%></i>
+</div>
+
+<ol>
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, article_path(article) %> - <%= article.content %> - <%= link_to "🗑",
+      article_path(article), data: { turbo_method: :delete, turbo_confirm: "Do you want to delete this article?" } %>
+    </li>
+  <% end %>
+</ol>
